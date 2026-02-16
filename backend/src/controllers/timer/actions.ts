@@ -187,8 +187,6 @@ export const stopTimer = async (
       return;
     }
 
-    console.log('Stopping timer:', id, 'for user:', userId);
-
     const timer: ITimer | null = await Timer.findOne({
       _id: id,
       userId,
@@ -228,14 +226,11 @@ export const stopTimer = async (
         duration: duration,
         timerId: timer._id,
       });
-
-      console.log('TimeLog created:', timeLog._id.toString());
     } catch (logError: any) {
       console.error('Failed to create TimeLog:', logError.message);
     }
 
     await Timer.findByIdAndDelete(id);
-    console.log('Timer deleted successfully');
 
     const response: StopTimerResponse = {
       success: true,
