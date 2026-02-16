@@ -18,7 +18,7 @@ export function SubmitButton({
     <button
       type="submit"
       disabled={isSubmitting || !isValid}
-      className={`w-full py-3 px-4 rounded-lg bg-orange-300 hover:bg-orange-400 text-white font-medium disabled:opacity-50 disabled:cursor-not-allowed transition-colors ${className}`}
+      className={`w-50 py-3 px-4 rounded-lg border-2 border-orange-300 hover:bg-orange-300 hover:border-orange-400 text-black font-medium disabled:opacity-50 disabled:cursor-not-allowed transition-colors ${className}`}
     >
       {isSubmitting ? (
         <span className="flex items-center justify-center gap-2">

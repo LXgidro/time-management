@@ -66,6 +66,7 @@ function LoginPage() {
           isSubmitting={isSubmitting}
           isValid={isValid}
           loadingText="Вход..."
+          className="w-full text-white bg-orange-400 hover:bg-orange-500 border-none"
         >
           Войти
         </SubmitButton>

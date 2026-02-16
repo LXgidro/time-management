@@ -78,7 +78,7 @@ function RegisterPage() {
           autoComplete="new-password"
         />
 
-        <div>
+        <div className="flex flex-col">
           <InputField
             label="Подтвердите пароль"
             type="password"
@@ -86,15 +86,17 @@ function RegisterPage() {
             error={errors.confirmPassword}
             register={register('confirmPassword')}
             autoComplete="new-password"
+            successMessage={
+              !errors.confirmPassword && confirmPassword && passwordsMatch
+                ? '✓ Пароли совпадают'
+                : undefined
+            }
           />
-
-          {!errors.confirmPassword && passwordsMatch && confirmPassword && (
-            <p className="text-sm text-green-600 mt-1">✓ Пароли совпадают</p>
-          )}
         </div>
 
         <div className="pt-2">
           <SubmitButton
+            className="w-full text-white bg-orange-400 border-none hover:bg-orange-300"
             isSubmitting={isSubmitting}
             isValid={isValid}
             loadingText="Регистрация..."

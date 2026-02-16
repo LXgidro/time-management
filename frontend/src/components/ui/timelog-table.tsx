@@ -106,7 +106,7 @@ export function TimeLogTable({
                     <button
                       onClick={() => setDeleteConfirmId(log._id)}
                       disabled={isDeleting}
-                      className="p-2 bg-gray-300 hover:bg-gray-400 rounded-lg transition-colors"
+                      className="p-1.5  bg-gray-300 hover:bg-gray-400 rounded-lg transition-colors"
                       title="Удалить запись"
                     >
                       <TrashIcon className="w-5 h-5" />

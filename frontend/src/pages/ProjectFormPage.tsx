@@ -143,6 +143,7 @@ function ProjectFormPage() {
           error={errors.name}
           register={register('name')}
           disabled={isSubmitting}
+          className="border-orange-300 focus:border-orange-400"
         />
 
         <div>
@@ -175,10 +176,10 @@ function ProjectFormPage() {
           </button>
 
           <SubmitButton
+            className="flex-1"
             isSubmitting={isSubmitting}
             isValid={true}
             loadingText={isEdit ? 'Сохранение...' : 'Создание...'}
-            className="flex-1"
           >
             {isEdit ? 'Сохранить' : 'Создать проект'}
           </SubmitButton>

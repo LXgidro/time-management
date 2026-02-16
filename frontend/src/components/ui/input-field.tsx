@@ -8,6 +8,8 @@ interface InputFieldProps {
   register: UseFormRegisterReturn;
   autoComplete?: string;
   disabled?: boolean;
+  className?: string;
+  successMessage?: string;
 }
 
 export function InputField({
@@ -18,6 +20,8 @@ export function InputField({
   register,
   autoComplete,
   disabled = false,
+  className = '',
+  successMessage,
 }: InputFieldProps) {
   return (
     <div>
@@ -28,7 +32,7 @@ export function InputField({
           error
             ? 'border-red-300 focus:border-red-500'
             : 'border-gray-200 focus:border-orange-400'
-        }`}
+        }${disabled ? 'bg-gray-100 cursor-not-allowed' : ''} ${className}`}
         placeholder={placeholder}
         autoComplete={autoComplete}
         aria-invalid={!!error}
@@ -37,6 +41,9 @@ export function InputField({
       />
       <div className="min-h-5 mt-1">
         {error && <p className="text-sm text-red-600 mt-1">{error.message}</p>}
+        {!error && successMessage && (
+          <p className="text-sm text-green-600 mt-1">{successMessage}</p>
+        )}
       </div>
     </div>
   );

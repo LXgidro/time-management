@@ -231,17 +231,14 @@ function SettingsPage() {
                 placeholder="••••••••"
                 error={passwordErrors.confirmPassword}
                 register={registerPassword('confirmPassword')}
-              />
-
-              {!passwordErrors.confirmPassword && confirmPassword && (
-                <p
-                  className={`text-sm mt-1 ${passwordsMatch ? 'text-green-600' : 'text-red-600'}`}
-                >
-                  {passwordsMatch
+                successMessage={
+                  !passwordErrors.confirmPassword &&
+                  confirmPassword &&
+                  passwordsMatch
                     ? '✓ Пароли совпадают'
-                    : '✗ Пароли не совпадают'}
-                </p>
-              )}
+                    : undefined
+                }
+              />
             </div>
 
             <div className="pt-2">
