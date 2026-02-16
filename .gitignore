@@ -5,12 +5,15 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
-
+backend/dist/
+frontend/dist/
+backend/node_modules/
+frontend/node_modules/
+.env
 node_modules
 dist
 dist-ssr
 *.local
-.env
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
